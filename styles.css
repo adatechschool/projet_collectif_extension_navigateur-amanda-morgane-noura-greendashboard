@@ -1,0 +1,9 @@
+body {
+    text-align: center;
+    font-family: 'Open Sans', 'Segoe UI Light', Arial;
+}
+
+p {
+    margin-top: 30px;
+    color: gray;
+}
