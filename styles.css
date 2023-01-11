@@ -1,9 +1,8 @@
 body {
     text-align: center;
-    font-family: 'Open Sans', 'Segoe UI Light', Arial;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-p {
-    margin-top: 30px;
-    color: gray;
+#Mediastack img{
+    max-width: 300px;
 }
