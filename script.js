@@ -17,8 +17,6 @@ async function fetchPhoto(){
   });
   const response = await dataPhoto.json();   //convert the response to json 
 
-  // displayPhoto(response);   // call the displayPhoto method to display the images on page
-
   //Afficher la photo et le photographe dans le HTML
   const photo = document.querySelector("#imagePexels");
   photo.src = response.photos[0].src.large;
@@ -28,18 +26,32 @@ async function fetchPhoto(){
 }
 fetchPhoto()
 
-/* function displayPhoto(response){
-  //use forEach loop to iterate on each item
-  response.photos.forEach((image) => {
-      const photo = document.createElement("div");
-      photo.innerHTML = `<img src=${image.src.large}>
-      <figcaption> Photo by: ${image.photographer}📸</figcaption>`;
-      document.querySelector(".display_images").appendChild(photo);
-  });
-} */
+
+//------------------------------------------------------API PLANTE
+
+const apikeyPlant = "6z_Y4D8lb_dc3cgXBPzhCHMIcCyA-wSpO6qHQQgb7CA";
+
+const urlPlant = `https://trefle.io/api/v1/plants?token=${apikeyPlant}`;
+
+function fetchPlant() {
+  fetch(urlPlant)
+    .then((response) => {
+      return response.json();
+    })
+    .then((data) => {
+      const name = document.querySelector("#name");
+      name.innerHTML = data.data[0].common_name;
+      const scientific_name = document.querySelector("#scientific_name");
+      scientific_name.innerHTML = data.data[0].scientific_name;
+      const image = document.querySelector("#image");
+      image.src = data.data[0].image_url;
+    });
+}
+fetchPlant()
 
 
-//------------------------------------------------------ API JOURNAUX
+//------------------------------------------------------API JOURNAUX
+//Ne fonctionne pas à tous les coups
 
 /* const apikeyNews = "cd932fbd09cd7e778caef748eff02208"
 //const apikeyNews = "708f4cfa9af5525467482dcaeea94636"
@@ -73,9 +85,15 @@ fetchNews() */
 
 
 //----------------------------------------------------API NYT
+//Articles payants...
 
-const urlNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:(%22Environment%22)&api-key=COaEiJPyeXNsj63Tg69fU0QuU4AH0a8F";
-//catégorie = Environnement  // Ajouter un filtre au niveau de la date pour avoir les derniers articles ?
+/*
+const apikeyNYT = "COaEiJPyeXNsj63Tg69fU0QuU4AH0a8F";
+const category = "climate" // news_desk:environment
+const date = "20230101" // begin_date=20230101
+
+//const urlNYT = "https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:climate&begin_date=20230101&api-key=COaEiJPyeXNsj63Tg69fU0QuU4AH0a8F";
+const urlNYT = `https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=news_desk:${category}&begin_date=${date}&api-key=${apikeyNYT}`;
 
 function fetchNYT() {
   fetch(urlNYT)
@@ -91,28 +109,5 @@ function fetchNYT() {
       link.innerHTML = data.response.docs[0].web_url; //affiche le lien vers l'article
     });
 }
-fetchNYT() 
-
-
-
-//------------------------------------------------------ API PLANTE
-
-const apikeyPlant = "6z_Y4D8lb_dc3cgXBPzhCHMIcCyA-wSpO6qHQQgb7CA";
-
-const urlPlant = `https://trefle.io/api/v1/plants?token=${apikeyPlant}`;
-
-function fetchPlant() {
-  fetch(urlPlant)
-    .then((response) => {
-      return response.json();
-    })
-    .then((data) => {
-      const name = document.querySelector("#name");
-      name.innerHTML = data.data[0].common_name;
-      const scientific_name = document.querySelector("#scientific_name");
-      scientific_name.innerHTML = data.data[0].scientific_name;
-      const image = document.querySelector("#image");
-      image.src = data.data[0].image_url;
-    });
-}
-fetchPlant()
+fetchNYT()
+*/

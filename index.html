@@ -1,23 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
-        <title>Green dashboard</title>
-    </head>
 
-    <body id="body">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Green dashboard</title>
+</head>
 
+<body id="body">
+
+    <div id="dashboard">
+
+        <!--Flux RSS podcast environnement Radio France-->
+        <div id="fluxRSSPodcast" class="bloc">
+            <h2>Les derniers podcasts Radio France</h2>
+            <iframe src="https://feed.mikle.com/widget/v2/159054/?preloader-text=Loading"
+                height="324px" width="100%" class="fw-iframe" scrolling="no" frameborder="0">
+            </iframe>
+        </div>
+
+        <!--Flux RSS actu environnement-->
+        <div id="fluxRSSInfos" class="bloc">
+            <h2>Les dernières actualités</h2>
+            <iframe src="https://feed.mikle.com/widget/v2/159055/?preloader-text=Loading"
+                height="246px" width="100%" class="fw-iframe" scrolling="no" frameborder="0">
+            </iframe>
+        </div>
+                
+        <!--Radio France Culture-->
+        <div id="radio" class="bloc">
+            <h2>Écouter France Culture</h2>
+            <iframe id="allzicradio" src="https://www.allzicradio.com/en/player/embed/89/france-culture?width=200&primary=EBEBEB&autoplay=0&color=0&playlist=1" frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                width="200" height="350" scrolling="no">
+            </iframe>
+        </div>
+        
         <!--Plante-->
-        <div id="Trefle">
+        <div id="trefle" class="bloc">
+            <h2>La plante du jour</h2>
             <h3 id="name"></h3>
             <p id="scientific_name"></p>
             <img id="image" src=""/>
         </div>
-
-        <br>
         
         <!--Article Mediastack-->
         <!--<div id="Mediastack">
@@ -29,24 +58,25 @@
             <a href="" id="url"></a>
         </div>-->
 
-        <br>
-    
         <!--Article NYT-->
-        <div id="NYT">
+        <!--<div id="NYT" class="bloc">
+            <h2>Les derniers articles du New York Times</h2>
             <h3 id="title"></h3>
             <p id="abstract"></p>
             <a href="" id="link"></a>
-        </div>
-
-        <br><br>
+        </div>-->
 
         <!--Photo Pexels-->
-        <div id="Pexels" class="display_images">
+        <div id="pexels" class="bloc">
+            <h2>L'image du jour</h2>
             <img id="imagePexels" src=""/>
             <p id="photographer"></p>
         </div>
 
-        <script type="module" src="script.js"></script>
-    </body>
+    </div>
+
+    <script type="module" src="script.js"></script>
+
+</body>
 
 </html>

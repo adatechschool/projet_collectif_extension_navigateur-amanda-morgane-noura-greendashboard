@@ -1,12 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap');
+
 body {
     text-align: center;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Lato', sans-serif;
 }
 
-#Mediastack img{
-    max-width: 300px;
+h2{
+    font-size: 30px;
 }
 
-#Trefle img{
+#dashboard{
+    display: flex;
+    flex-flow: row wrap;
+    align-content: flex-start;
+    justify-content: space-around;
+}
+
+.bloc{
+    margin: 50px;
+}
+
+#trefle img{
     max-width: 300px;
 }
