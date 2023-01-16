@@ -63,6 +63,46 @@ function fetchPlant() {
 fetchPlant()
 
 
+//----------------------------------------------------API QUOTE
+
+const urlQuotes = "https://zenquotes.io/api/random"
+
+async function fetchQuote()
+{
+  const dataQuotes = await fetch(urlQuotes);
+  const response = await dataQuotes.json();
+
+  const quote = document.querySelector("#quote");
+  quote.innerHTML = response[0].q;
+  const author = document.querySelector("#author");
+  author.innerHTML = response[0].a;
+}
+fetchQuote();
+
+
+//----------------------------------------------------API FACT
+
+const apikeyFact = "dwkBdeqrwnHNb0PVn8RbNQ==bxIqpCyZAbv3Nun0";
+const urlFact = "https://api.api-ninjas.com/v1/facts?limit=1"
+
+async function fetchFact(){
+  const dataFact = await fetch(urlFact, 
+  {
+      method: "GET",
+      headers: {
+        'X-Api-Key': apikeyFact
+      },
+  });
+  const response = await dataFact.json();   //convert the response to json 
+
+  const fact = document.querySelector("#fact");
+  fact.innerHTML = response[0].fact;
+
+}
+fetchFact()
+
+
+
 //------------------------------------------------------API JOURNAUX
 //Ne fonctionne pas à tous les coups
 
@@ -126,3 +166,13 @@ fetchNYT()
 */
 
 
+/*
+function replaceImages(){
+  let images = document.getElementsByTagName("img")
+  images.src = "/foret.jpg";
+  images.className = "image";
+  console.log(images)
+}
+
+document.getElementById("myButton").addEventListener("click", replaceImages);
+*/
