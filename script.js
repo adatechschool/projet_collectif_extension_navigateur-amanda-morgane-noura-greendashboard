@@ -7,7 +7,7 @@ let photo_num = 1
 const query = 'Nature';
 
 async function fetchPhoto(){
-  const dataPhoto = await fetch(`https://api.pexels.com/v1/search?query=${query}&page=${page_num}&per_page=${photo_num}`, 
+  const dataPhoto = await fetch(`https://api.pexels.com/v1/search?query=${query}&page=${page_num}&per_page=${photo_num}&orientation=landscape&size=medium`, 
   {
       method: "GET",
       headers: {
@@ -18,10 +18,23 @@ async function fetchPhoto(){
   const response = await dataPhoto.json();   //convert the response to json 
 
   //Afficher la photo et le photographe dans le HTML
-  const photo = document.querySelector("#imagePexels");
-  photo.src = response.photos[0].src.large;
-  const photographer = document.querySelector("#photographer");
-  photographer.innerHTML = response.photos[0].photographer;
+  
+  //const photo = document.querySelector("#imagePexels");
+  //photo.src = response.photos[0].src.large;
+  
+  
+  //const photographer = document.querySelector("#photographer");
+  //photographer.innerHTML = response.photos[0].photographer;
+
+
+   const photo = response.photos[0].src.large;
+   document.body.style.backgroundImage = "url('" + photo + "')";
+   document.body.style.backgroundRepeat = "no-repeat";
+   document.body.style.backgroundSize = "cover";
+   document.body.style.backgroundAttachment= "fixed";
+
+
+  
 
 }
 fetchPhoto()
@@ -111,3 +124,5 @@ function fetchNYT() {
 }
 fetchNYT()
 */
+
+
