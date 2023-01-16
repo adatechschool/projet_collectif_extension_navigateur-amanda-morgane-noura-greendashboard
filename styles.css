@@ -17,9 +17,35 @@ h2{
 }
 
 .bloc{
-    margin: 50px;
-}
+    margin: 50px
+    }
 
+#radio {
+    border-radius: 10px 10px 10px 10px;
+    background-color:rgba(250, 250, 250, 0.6);
+    height : 470px;
+    width: 470px;
+}
+#trefle{
+    border-radius: 10px 10px 10px 10px;
+    background-color:rgba(250, 250, 250, 0.6);
+    height : 470px;
+    width: 470px;
+}
 #trefle img{
-    max-width: 300px;
+    position: auto;
+    max-width: 470px;
+    max-height: 300px;
+}
+#fluxRSSPodcast{
+    border-radius: 10px 10px 10px 10px;
+    background-color:  rgba(250, 250, 250, 0.6);
+    height : 470px;
+    width: 470px;
+}
+#fluxRSSInfos{
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(250, 250, 250, 0.6);
+    height : 470px;
+    width: 470px;
 }
