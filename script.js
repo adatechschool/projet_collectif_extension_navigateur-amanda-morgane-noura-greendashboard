@@ -33,9 +33,6 @@ async function fetchPhoto(){
    document.body.style.backgroundSize = "cover";
    document.body.style.backgroundAttachment= "fixed";
 
-
-  
-
 }
 fetchPhoto()
 
@@ -44,7 +41,9 @@ fetchPhoto()
 
 const apikeyPlant = "6z_Y4D8lb_dc3cgXBPzhCHMIcCyA-wSpO6qHQQgb7CA";
 
-const urlPlant = `https://trefle.io/api/v1/plants?token=${apikeyPlant}`;
+let page_num2 = Math.floor(Math.random() * 100);
+
+const urlPlant = `https://trefle.io/api/v1/plants?token=${apikeyPlant}&page=${page_num2}`;
 
 function fetchPlant() {
   fetch(urlPlant)
