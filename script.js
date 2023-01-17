@@ -68,6 +68,7 @@ const urlQuotes = "https://zenquotes.io/api/random"
 
 async function fetchQuote()
 {
+  console.log("test")
   const dataQuotes = await fetch(urlQuotes);
   const response = await dataQuotes.json();
 
@@ -75,6 +76,7 @@ async function fetchQuote()
   quote.innerHTML = response[0].q;
   const author = document.querySelector("#author");
   author.innerHTML = response[0].a;
+
 }
 fetchQuote();
 
@@ -107,10 +109,15 @@ let togg1 = document.getElementById("togg1");
 let togg2 = document.getElementById("togg2");
 let togg3 = document.getElementById("togg3");
 let togg4 = document.getElementById("togg4");
+let togg5 = document.getElementById("togg5");
+let togg6 = document.getElementById("togg6");
 let d1 = document.getElementById("fluxRSSPodcast");
 let d2 = document.getElementById("fluxRSSInfos");
 let d3 = document.getElementById("radio");
 let d4 = document.getElementById("trefle");
+let d5 = document.getElementById("quoteOfTheDay");
+let d6 = document.getElementById("factOfTheDay");
+
 togg1.addEventListener("click", () => {
   if(getComputedStyle(d1).display != "none"){
     d1.style.display = "none";
@@ -143,11 +150,33 @@ function toggd(){
 };
 togg4.onclick = toggd;
 
+function togge(){
+  if(getComputedStyle(d5).display != "none"){
+    d5.style.display = "none";
+  } else {
+    d5.style.display = "block";
+  }
+};
+togg5.onclick = togge;
+function toggf(){
+  if(getComputedStyle(d6).display != "none"){
+    d6.style.display = "none";
+  } else {
+    d6.style.display = "block";
+  }
+};
+togg6.onclick = toggf;
+
 const refreshButton = document.querySelector('.refresh-button');
 const refreshPage = () => {
   location.reload();
 }
 refreshButton.addEventListener('click', refreshPage);
+
+
+//------------------------------------------------------GENERER NOUVELLES INFOS
+
+document.getElementById('buttonQuote').onclick = fetchQuote;
 
 
 
@@ -224,3 +253,10 @@ function replaceImages(){
 
 document.getElementById("myButton").addEventListener("click", replaceImages);
 */
+
+let idExtension = chrome.runtime.id
+console.log(idExtension)
+let urlExtension = "chrome-extension://" + idExtension
+console.log(urlImage)
+let urlImage = urlExtension + "/foret.jpg"
+console.log(urlImage)

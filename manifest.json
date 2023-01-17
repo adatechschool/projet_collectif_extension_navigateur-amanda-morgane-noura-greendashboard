@@ -34,7 +34,7 @@
     },
     "web_accessible_resources": [
       {
-        "resources": [ "foret.jpg" ],
+        "resources": [ "images/*.jpg" ],
         "matches": [ "http://*/*", "https://*/*" ]
       }
   ]
