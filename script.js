@@ -101,6 +101,55 @@ async function fetchFact(){
 fetchFact()
 
 
+//------------------------------------------------------BOUTON EFFACER BLOC
+
+let togg1 = document.getElementById("togg1");
+let togg2 = document.getElementById("togg2");
+let togg3 = document.getElementById("togg3");
+let togg4 = document.getElementById("togg4");
+let d1 = document.getElementById("fluxRSSPodcast");
+let d2 = document.getElementById("fluxRSSInfos");
+let d3 = document.getElementById("radio");
+let d4 = document.getElementById("trefle");
+togg1.addEventListener("click", () => {
+  if(getComputedStyle(d1).display != "none"){
+    d1.style.display = "none";
+  } else {
+    d1.style.display = "block";
+  }
+})
+function togg(){
+  if(getComputedStyle(d2).display != "none"){
+    d2.style.display = "none";
+  } else {
+    d2.style.display = "block";
+  }
+};
+togg2.onclick = togg;
+function toggc(){
+  if(getComputedStyle(d3).display != "none"){
+    d3.style.display = "none";
+  } else {
+    d3.style.display = "block";
+  }
+};
+togg3.onclick = toggc;
+function toggd(){
+  if(getComputedStyle(d4).display != "none"){
+    d4.style.display = "none";
+  } else {
+    d4.style.display = "block";
+  }
+};
+togg4.onclick = toggd;
+
+const refreshButton = document.querySelector('.refresh-button');
+const refreshPage = () => {
+  location.reload();
+}
+refreshButton.addEventListener('click', refreshPage);
+
+
 
 //------------------------------------------------------API JOURNAUX
 //Ne fonctionne pas à tous les coups
