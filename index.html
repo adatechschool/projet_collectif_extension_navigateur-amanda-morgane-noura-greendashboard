@@ -13,76 +13,114 @@
 
 <body id="body">
 
-    <button class="refresh-button">Refresh!</button>
+    <div id="refreshButton">
+        <button class="refresh-button">Refresh!</button>
+    </div>
 
     <div class="lignes">
 
         <div class="colonnes">
+
             <!--Flux RSS actu environnement-->
-            <div id="fluxRSSInfos" class="bloc">
-                <button id="togg2"> &#10060;</button>
-                <h2>Un article</h2>
-                <iframe src="https://feed.mikle.com/widget/v2/159055/?preloader-text=Loading"
-                    height="246px" width="100%" class="fw-iframe" scrolling="no" frameborder="0">
-                </iframe>
-            </div>
-            <!--Citation-->
-<!--             <div id="quoteOfTheDay" class="bloc">
-                <h2>Une citation</h2>
-                <p id="quote"></p>
-                <p id="author"></p>
-                <button id="buttonQuote"> J'en veux une autre !</button>
-            </div>    
- -->            <div class="cardBox">
+            <div class="bloc" id="fluxRSSInfos">
                 <div class="card">
                     <div class="front">
-                        <button id="togg5"> &#10060;</button>
+                        <button id="togg2"> &#10060;</button>
+                        <h2>Un article</h2>
+                        <iframe src="https://feed.mikle.com/widget/v2/159055/?preloader-text=Loading"
+                            height="284px" width="400px" class="fw-iframe" scrolling="no" frameborder="0">
+                        </iframe>                    
+                    </div>
+                </div>
+            </div>
+
+            <!--Citation-->
+            <div class="cardBox" id="quoteOfTheDay">
+                <div class="card">
+                    <div class="front">
+                        <button> &#10060;</button>
                         <h2>Une citation</h2>
                         <p id="quote"></p>
                         <p id="author"></p>
                     </div>
                     <div class="back">
+                        <button id="togg5" class="buttonNewInfo"> &#10060;</button>
                         <button id="buttonQuote"> J'en veux une autre !</button>
                     </div>
                 </div>
             </div> 
+
         </div>
 
+
         <div class="colonnes">
+
             <!--Fact-->
-            <div id="factOfTheDay" class="bloc">
-                <button id="togg6"> &#10060;</button>
-                <h2>Un fait</h2>
-                <p id="fact"></p>
-            </div>
+            <div class="cardBox" id="factOfTheDay">
+                <div class="card">
+                    <div class="front">
+                        <button> &#10060;</button>
+                        <h2>Un fait</h2>
+                        <p id="fact"></p>
+                    </div>
+                    <div class="back">
+                        <button id="togg6" class="buttonNewInfo"> &#10060;</button>
+                        <button id="buttonFact"> J'en veux un autre !</button>
+                    </div>
+                </div>
+            </div> 
+
             <!--Plante-->
-            <div id="trefle" class="bloc">
-                <button id="togg4"> &#10060;</button>
-                <h2>Une plante</h2>
-                <h3 id="name"></h3>
-                <p id="scientific_name"></p>
-                <img id="image" src=""/>
+            <div class="cardBox" id="trefle">
+                <div class="card">
+                    <div class="front">
+                        <button> &#10060;</button>
+                        <h2>Une plante</h2>
+                        <h3 id="name"></h3>
+                        <p id="scientific_name"></p>
+                        <div id="img">
+                            <img id="image" src=""/>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <button id="togg4" class="buttonNewInfo"> &#10060;</button>
+                        <button id="buttonPlant"> Je veux en découvrir une autre !</button>
+                    </div>
+                </div>
             </div>
-        </div>    
+
+        </div> 
         
+
         <div class="colonnes">
+
             <!--Flux RSS podcast environnement Radio France-->
-            <div id="fluxRSSPodcast" class="bloc">
-                <button id="togg1"> &#10060;</button>
-                <h2>Un podcast</h2>
-                <iframe src="https://feed.mikle.com/widget/v2/159054/?preloader-text=Loading"
-                    height="324px" width="100%" class="fw-iframe" scrolling="no" frameborder="0">
-                </iframe>
+            <div class="bloc" id="fluxRSSPodcast">
+                <div class="card">
+                    <div class="front">
+                        <button id="togg1"> &#10060;</button>
+                        <h2>Un podcast</h2>
+                        <iframe src="https://feed.mikle.com/widget/v2/159054/?preloader-text=Loading"
+                            height="369px" width="400px" class="fw-iframe" scrolling="no" frameborder="0">
+                        </iframe>
+                    </div>
+                </div>
             </div>
+
             <!--Radio France Culture-->
-            <div id="radio" class="bloc">
-                <button id="togg3"> &#10060;</button>
-                <h2>Une radio</h2>
-                <iframe id="allzicradio" src="https://www.allzicradio.com/en/player/embed/89/france-culture?width=200&primary=EBEBEB&autoplay=0&color=0&playlist=1" frameborder="0"
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                    width="200" height="350" scrolling="no">
-                </iframe>
+            <div class="bloc" id="radio">
+                <div class="card">
+                    <div class="front">
+                        <button id="togg3"> &#10060;</button>
+                        <h2>Une radio</h2>
+                        <iframe id="allzicradio" src="https://www.allzicradio.com/en/player/embed/89/france-culture?width=200&primary=EBEBEB&autoplay=0&color=0&playlist=1" frameborder="0"
+                            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            width="200" height="350" scrolling="no">
+                        </iframe>
+                    </div>
+                </div>
             </div>
+
         </div>    
 
         <!--Article Mediastack-->

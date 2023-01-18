@@ -1,13 +1,14 @@
 //----------------------------------------------------API PEXEL
-
+/*
 const apikeyPhoto = "563492ad6f91700001000001c4a853b4152a42a790a3ff6e397969e6"
 
 let page_num = Math.floor(Math.random() * 100)
 let photo_num = 1
 const query = 'Nature';
+const size = "large"
 
 async function fetchPhoto(){
-  const dataPhoto = await fetch(`https://api.pexels.com/v1/search?query=${query}&page=${page_num}&per_page=${photo_num}&orientation=landscape&size=medium`, 
+  const dataPhoto = await fetch(`https://api.pexels.com/v1/search?query=${query}&page=${page_num}&per_page=${photo_num}&orientation=landscape&size=${size}`, 
   {
       method: "GET",
       headers: {
@@ -31,11 +32,11 @@ async function fetchPhoto(){
    document.body.style.backgroundImage = "url('" + photo + "')";
    document.body.style.backgroundRepeat = "no-repeat";
    document.body.style.backgroundSize = "cover";
-   document.body.style.backgroundAttachment= "fixed";
+   document.body.style.backgroundAttachment= "scroll";
 
 }
 fetchPhoto()
-
+*/
 
 //------------------------------------------------------API PLANTE
 
@@ -55,8 +56,13 @@ function fetchPlant() {
       name.innerHTML = data.data[0].common_name;
       const scientific_name = document.querySelector("#scientific_name");
       scientific_name.innerHTML = data.data[0].scientific_name;
-      const image = document.querySelector("#image");
-      image.src = data.data[0].image_url;
+      //const image = document.querySelector("#image");
+      //image.src = data.data[0].image_url;
+      const image = document.querySelector("#img");
+      const img = data.data[0].image_url;
+      image.style.backgroundImage = "url('" + img + "')";
+      image.style.backgroundRepeat = "no-repeat";
+      image.style.backgroundSize = "cover";
     });
 }
 fetchPlant()
@@ -176,8 +182,58 @@ refreshButton.addEventListener('click', refreshPage);
 
 //------------------------------------------------------GENERER NOUVELLES INFOS
 
-document.getElementById('buttonQuote').onclick = fetchQuote;
+document.getElementById("buttonQuote").addEventListener("click", modifyQuote);
+function modifyQuote(){
+  fetchQuote();
+  document.getElementById('buttonQuote').innerHTML = "C'est fait : retourne la carte !";
+}
 
+document.getElementById("buttonFact").addEventListener("click", modifyFact);
+function modifyFact(){
+  fetchFact();
+  document.getElementById('buttonFact').innerHTML = "C'est fait : retourne la carte !";
+}
+
+document.getElementById("buttonPlant").addEventListener("click", modifyPlant);
+function modifyPlant(){
+  fetchPlant(); //Ne fonctionne pas
+  document.getElementById('buttonPlant').innerHTML = "C'est fait : retourne la carte !";
+}
+
+
+
+//------------------------------------------------------BACKGROUND ALEATOIRE
+
+function randomBackground(){
+  let random = Math.floor(Math.random() * 23) + 0;
+  var backgroundImage = ["url('images/background/automne.jpg')",
+                    "url('images/background/auvergne.jpg')",
+                    "url('images/background/bois.jpg')",
+                    "url('images/background/brouillard.jpg')",
+                    "url('images/background/champ.jpg')",
+                    "url('images/background/coquelicot.jpg')",
+                    "url('images/background/desert.jpg')",
+                    "url('images/background/dunes.jpg')",
+                    "url('images/background/ecureuil.jpg')",
+                    "url('images/background/espace.jpg')",
+                    "url('images/background/feuilles.jpg')",
+                    "url('images/background/foret.jpg')",
+                    "url('images/background/lac.jpg')",
+                    "url('images/background/mer.jpg')",
+                    "url('images/background/montagnes.jpg')",
+                    "url('images/background/neige.jpg')",
+                    "url('images/background/noir.jpg')",
+                    "url('images/background/nuage.jpg')",
+                    "url('images/background/orange.jpg')",
+                    "url('images/background/plage.jpg')",
+                    "url('images/background/roses.jpg')",
+                    "url('images/background/savane.jpg')",
+                    "url('images/background/violettes.jpg')"]
+  document.body.style.backgroundImage = backgroundImage[random];
+  document.body.style.backgroundSize = "cover";
+  document.body.style.backgroundAttachment= "scroll";
+}
+randomBackground()
 
 
 //------------------------------------------------------API JOURNAUX
@@ -253,10 +309,3 @@ function replaceImages(){
 
 document.getElementById("myButton").addEventListener("click", replaceImages);
 */
-
-let idExtension = chrome.runtime.id
-console.log(idExtension)
-let urlExtension = "chrome-extension://" + idExtension
-console.log(urlImage)
-let urlImage = urlExtension + "/foret.jpg"
-console.log(urlImage)

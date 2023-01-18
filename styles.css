@@ -19,127 +19,239 @@ body {
     flex-direction: column;
 }
 
-.bloc{
-    margin: 10px;
-    padding: 20px;
-    border-radius: 20px;
-    background-color:rgba(250, 250, 250, 0.6);
-    max-width: 400px;
-    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-}
-
 /*TEXTES*/
 
 h2{
     font-size: 30px;
-    margin: auto;
-    padding-bottom: 20px;
+    margin: 0;
+    padding: 20px 0 20px 0;
 }
 
 h3{
     font-size: 20px;
-    margin: auto;
-    
+    margin: 0;
+    padding-bottom: 20px;   
 }
 
 p{
     font-size: 18px;
-    margin: auto;
-}
-
-/*CSS SPECIFIQUE*/
-
-#trefle img{
-    border-radius: 20px;
-    max-width: 100%;
-    max-height: 100%;
+    margin: 0;
+    padding: 0 20px 10px 20px;
 }
 
 #scientific_name{
     font-style: italic;
     font-size: 14px;
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin: 0;
+    padding-bottom: 20px;
 }
 
 #author{
     font-style: italic;
     font-size: 14px;
-    margin-top: 10px;
 }
 
-button{
-    float: right;
-    border-radius: 50px;
-    border: none;
-    padding: 3px;
-    background-color: white;
-    cursor: pointer;
-}
+/*IMAGES*/
 
-.buttonQuote{
-    align-self: flex-start;
-}
+#img{
+    border-radius: 20px;
+    height: 500px;
+    width: 90%;
+    margin: auto;
+}    
 
 .imageForet{
     max-width: 100%;
     max-height: 100%;
 }
 
+/*DIMENSIONS*/
+
+iframe{
+    width: 95%;
+    margin: auto;
+}
+
+#radio iframe{
+    width: 50%;
+}
+
+#factOfTheDay{
+    height: 210px;
+}
+
+#quoteOfTheDay{
+    height: 240px;
+}
+
+#trefle{
+    height: 700px;
+    padding-bottom: 10px;
+}
+
+#radio{
+    height: 410px;
+}
+
+#fluxRSSPodcast{
+    height: 500px;
+}
+
+#fluxRSSInfos{
+    height: 420px;
+}
+
+/*BOUTONS*/
+
+button{
+    border-radius: 50px 50px 0 0;
+    border: none;
+    padding: 3px;
+    background-color: white;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+#togg4, #togg5, #togg6{
+    background-color: transparent;
+}
+
+#buttonQuote, #buttonFact, #buttonPlant{
+    align-self: center;
+    padding: 15px;
+    font-size: 20px;
+    opacity: 0.9;
+    margin-top: 10px;
+    border-radius: 50px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+}
+
+.refreshButton{
+	position: absolute;
+	transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+.refresh-button {
+    float: right;
+    color: rgb(188, 177, 23);
+	background-color: white;
+	border: none;
+    position: relative;
+	overflow: hidden;
+	transition: transform 500ms ease;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+}
+
+.refresh-button::before {
+	content: "";
+	background-color:rgb(188, 177, 23);
+	width: 0%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	transition: width 500ms ease;
+}
+
+.refresh-button::after {
+	content: "";
+	background-image: url("images/reload.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 100%;
+	width: 0%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transition: width 500ms ease;
+}
+
+.refresh-button:hover:before,
+.refresh-button:hover:after {
+	width: 100%;
+}
+
+.refresh-button:active {
+	transform: scale(0.9);
+}
+
+
 /*RETOURNER LES BLOCS*/
 
+.bloc{
+    margin: 15px;
+    width: 420px;
+    height: 400px;
+}
+
 .cardBox {
-    margin: 0% 2% 0 2%;
+    margin: 15px;
+    width: 420px;
+    height: 400px;
+    
     perspective: 800px;
     transition: all 0.3s ease 0s;
-  }
+}
   
-  .cardBox:hover .card {
+.cardBox:hover .card {
     transform: rotateY( 180deg);
-  }
+}
   
-  .card {
+.card {
     width: 100%;
-    height: 200px;
+    height: 100%;
+
     transform-style: preserve-3d;
     transition: transform 0.4s ease 0s;
     -webkit-animation: giro 2.5s 1;
     animation: giro 2.5s 1;
-  }
+}
   
-  .card .front,
-  .card .back {
+.front, .back {
     position: absolute;
     backface-visibility: hidden;
-    box-sizing: border-box;
-    /* display: block; */
     height: 100%;
     width: 100%;
-    padding: 30px;
-    text-align: center;
     border-radius: 20px;
-  }
-  
-  .card .front{
-    color: #0d221b;
-    background-color: #e3db7e;
-    box-shadow: 4px 4px #135b35;
-    display:flex;
+    text-align: center;
+    display: flex;
     flex-direction: column;
-    justify-content: center;  
+    /* align-items: center; */
+}
+
+.front{
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
   }
   
-  .card .back {
+.back {
     transform: rotateY( 180deg);
     color: white;
-    background-color: #135b35;
-    background-image: url("images/foret.jpg");
+    /* background-image: url("images/foret.jpg"); */
+    /* background-size: cover; */
+}
+
+#factOfTheDay .back {
+    background-image: url("images/animaux/pexels-kat-smith-568020.jpg");
     background-size: cover;
-    box-shadow: 3px 3px #e3db7e;
-    display:flex;
-    flex-direction: column;
-    justify-content: center;  
-  }
+}
+
+#quoteOfTheDay .back {
+    background-image: url("images/animaux/pexels-lumn-406014.jpg");
+    background-size: cover;
+}
+
+#trefle .back {
+    background-image: url("images/animaux/pexels-josiah-farrow-3396657.jpg");
+    background-size: cover;
+    background-position: bottom;
+}
   
   @-webkit-keyframes giro {
     from {
