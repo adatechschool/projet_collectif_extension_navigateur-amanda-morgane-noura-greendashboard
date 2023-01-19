@@ -280,10 +280,10 @@ function randomNumber(){
     "85% des textiles finissent dans des décharges ou sont incinérés, bien que la plupart de ces matériaux puissent être réutilisés.",
     "Chaque seconde, l’équivalent d’un camion poubelle rempli de textiles est mis en décharge ou brûlé.",
     "Quelque 93 milliards de mètres cubes d’eau, assez pour répondre aux besoins de consommation de cinq millions de personnes, sont utilisés chaque année par l’industrie de la mode.",
-    "Chaque année, on estime à 11,2 milliards de tonnes la quantité de déchets solides collectés dans le monde, et la décomposition de la proportion organique des déchets solides contribue à environ 5% des émissions mondiales de gaz à effet de serre.",
+    "Chaque année, on estime à 11,2 milliards de tonnes la quantité de déchets solides collectés dans le monde.",
     "Le recyclage crée des emplois : le secteur du recyclage emploie 12 millions de personnes rien qu’au Brésil, en Chine et aux États-Unis.",
-    "Seuls 9% de l’ensemble des déchets plastiques jamais produits ont été recyclés. Environ 12% ont été incinérés, tandis que le reste (79%) s’est accumulé dans des décharges, des dépotoirs ou dans le milieu naturel.",
-    "De 2010 à 2019, les déchets électroniques produits dans le monde sont passés de 5,3 à 7,3 kilogrammes par habitant par an. Entre-temps, le recyclage écologiquement rationnel des déchets électroniques a augmenté à un rythme beaucoup plus lent - de 0,8 à 1,3 kilogramme par habitant par an."]
+    "Seuls 9% des déchets plastiques produits ont été recyclés. Environ 12% ont été incinérés, tandis que le reste s’est accumulé dans des décharges, des dépotoirs ou dans le milieu naturel.",
+    "De 2010 à 2019, les déchets électroniques produits dans le monde sont passés de 5,3 à 7,3 kilogrammes par habitant par an."]
     
     document.getElementById('chiffreDuJour').innerHTML = chiffreEcolo[random];
 }
