@@ -41,6 +41,30 @@
                 </div>
             </div>
 
+            <!--Chiffre-->
+            <div class="cardBox" id="numberOfTheDay">
+                <div class="card">
+                    <div class="front">
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/chiffre.png"/>
+                                <h2>Un chiffre</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p id="chiffreDuJour"></p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <button id="togg7" class="buttonNewInfo"> &#10060;</button>
+                        <button id="buttonNumber"> J'en veux un autre !</button>
+                    </div>
+                </div>
+            </div> 
+            
             <!--Citation-->
             <div class="cardBox" id="quoteOfTheDay">
                 <div class="card">
@@ -54,8 +78,10 @@
                                 <button> &#10060;</button>
                             </div>
                         </div>
-                        <p id="quote"></p>
-                        <p id="author"></p>
+                        <div id="containerQuote">
+                            <p id="quote"></p>
+                            <p id="author"></p>
+                        </div>
                     </div>
                     <div class="back">
                         <button id="togg5" class="buttonNewInfo"> &#10060;</button>
@@ -82,7 +108,9 @@
                                 <button> &#10060;</button>
                             </div>
                         </div>
-                        <p id="fact"></p>
+                        <div class="container">
+                            <p id="fact"></p>
+                        </div>
                     </div>
                     <div class="back">
                         <button id="togg6" class="buttonNewInfo"> &#10060;</button>

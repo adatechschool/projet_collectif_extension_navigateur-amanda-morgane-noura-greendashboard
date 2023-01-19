@@ -172,6 +172,15 @@ function toggf(){
   }
 };
 togg6.onclick = toggf;
+function toggg(){
+  if(getComputedStyle(d7).display != "none"){
+    d7.style.display = "none";
+  } else {
+    d7.style.display = "block";
+  }
+};
+togg7.onclick = toggg;
+
 
 const refreshButton = document.querySelector('.refresh-button');
 const refreshPage = () => {
@@ -200,13 +209,19 @@ function modifyPlant(){
   document.getElementById('buttonPlant').innerHTML = "C'est fait : retourne la carte !";
 }
 
+document.getElementById("buttonNumber").addEventListener("click", modifyNumber);
+function modifyNumber(){
+  randomNumber();
+  document.getElementById('buttonNumber').innerHTML = "C'est fait : retourne la carte !";
+}
+
 
 
 //------------------------------------------------------BACKGROUND ALEATOIRE
 
 function randomBackground(){
   let random = Math.floor(Math.random() * 23) + 0;
-  var backgroundImage = ["url('images/background/automne.jpg')",
+  let backgroundImage = ["url('images/background/automne.jpg')",
                     "url('images/background/auvergne.jpg')",
                     "url('images/background/bois.jpg')",
                     "url('images/background/brouillard.jpg')",
@@ -235,6 +250,44 @@ function randomBackground(){
 }
 randomBackground()
 
+//------------------------------------------------------ASTUCES
+function randomNumber(){
+  let random = Math.floor(Math.random() * 31) + 0;
+  let chiffreEcolo = ["Le visionnage en ligne d’une vidéo en haute définition de 10 minutes sur un smartphone équivaut à utiliser à pleine puissance un four électrique de 2000W pendant 5 minutes.",
+    "Selon le CNRS, 20% de la biodiversité guyanaise n’aurait ainsi pas été remplacée en raison du réchauffement climatique.",
+    "50% du territoire français serait pollué par les nitrates.",
+    "En 30 ans, 30% de la superficie des prairies et 60% des zones humides ont disparus en France.",
+    "En France, le nombre d’oiseaux communs en milieu agricole a diminué de 30% entre 1989 et 2007.",
+    "La vie d’une abeille est relativement courte, 6 semaines. Pour polliniser les fleurs qu’elle rencontre dans un périmètre de 2 km, elle peut parcourir 800 km dans sa vie.",
+    "17% : c'est le pourcentage d'espèces éteintes ou menacées dans les listes rouges nationales en 2020.",
+    "Les émissions mondiales de CO2 fossile ont augmenté de + 68% entre 1990 et 2019. Elles représentent 3/4 des émissions mondiales de gaz à effet de serre liées aux activités humaines.",
+    "En 2019, la Chine représente 30% des émissions mondiales de CO2 fossile, les États-Unis 13% et l’Union européenne 8%.",
+    "En moyenne mondiale, les émissions mondiales de CO2 fossile ramenées à la population sont de 5 tonnes de CO2 par an et par habitant, soit 15% de plus qu’en 1990.",
+    "Dans l’UE, le premier secteur émetteur est l’industrie de l’énergie, tandis que le secteur des transports est le principal contributeur aux émissions françaises.",
+    "Évolution des émissions mondiales de gaz à effet de serre (1990-2020) : + 51%.",
+    "L’extraction des ressources a plus que triplé depuis 1970, avec notamment une augmentation de 45% de la consommation de combustibles fossiles.",
+    "Nous utilisons l'équivalent de 1,6 planète Terre pour maintenir notre mode de vie actuel.",
+    "Dans les pays à revenu élevé, l’empreinte matérielle par habitant est plus de dix fois supérieure à celle des pays à faible revenu.",
+    "Le groupe des 20 principales économies (G20) est responsable de 78% des émissions mondiales de gaz à effet de serre.",
+    "À l'échelle mondiale, les bâtiments résidentiels et commerciaux consomment plus de la moitié de l'électricité.",
+    "Les émissions provenant de la climatisation et de la réfrigération devraient augmenter de 90% d’ici 2050 par rapport aux niveaux de 2017.",
+    "Les émissions de gaz à effet de serre du secteur des transports ont plus que doublé depuis 1970, environ 80% de cette augmentation provenant des véhicules routiers.",
+    "Avec une douche d’environ 10 minutes par jour, une personne moyenne consomme l’équivalent de plus de 100 000 verres d’eau potable chaque année.",
+    "Un tiers de toute la nourriture produite est perdue, gaspillée ou gâchée.",
+    "Le monde devra produire environ 50% de nourriture en plus d’ici 2050 pour nourrir une population mondiale croissante.",
+    "L’industrie de la mode (vêtements et chaussures) produit annuellement plus de 8% des gaz à effet de serre et 20% des eaux usées mondiales.",
+    "Il faut environ 7500 litres d’eau pour fabriquer une seule paire de jeans, de la production du coton à la livraison du produit final au magasin.",
+    "85% des textiles finissent dans des décharges ou sont incinérés, bien que la plupart de ces matériaux puissent être réutilisés.",
+    "Chaque seconde, l’équivalent d’un camion poubelle rempli de textiles est mis en décharge ou brûlé.",
+    "Quelque 93 milliards de mètres cubes d’eau, assez pour répondre aux besoins de consommation de cinq millions de personnes, sont utilisés chaque année par l’industrie de la mode.",
+    "Chaque année, on estime à 11,2 milliards de tonnes la quantité de déchets solides collectés dans le monde, et la décomposition de la proportion organique des déchets solides contribue à environ 5% des émissions mondiales de gaz à effet de serre.",
+    "Le recyclage crée des emplois : le secteur du recyclage emploie 12 millions de personnes rien qu’au Brésil, en Chine et aux États-Unis.",
+    "Seuls 9% de l’ensemble des déchets plastiques jamais produits ont été recyclés. Environ 12% ont été incinérés, tandis que le reste (79%) s’est accumulé dans des décharges, des dépotoirs ou dans le milieu naturel.",
+    "De 2010 à 2019, les déchets électroniques produits dans le monde sont passés de 5,3 à 7,3 kilogrammes par habitant par an. Entre-temps, le recyclage écologiquement rationnel des déchets électroniques a augmenté à un rythme beaucoup plus lent - de 0,8 à 1,3 kilogramme par habitant par an."]
+    
+    document.getElementById('chiffreDuJour').innerHTML = chiffreEcolo[random];
+}
+randomNumber()
 
 //------------------------------------------------------API JOURNAUX
 //Ne fonctionne pas à tous les coups
