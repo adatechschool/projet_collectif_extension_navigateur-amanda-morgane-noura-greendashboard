@@ -117,12 +117,16 @@ let togg3 = document.getElementById("togg3");
 let togg4 = document.getElementById("togg4");
 let togg5 = document.getElementById("togg5");
 let togg6 = document.getElementById("togg6");
+let togg7 = document.getElementById("togg7");
+let togg8 = document.getElementById("togg8");
 let d1 = document.getElementById("fluxRSSPodcast");
 let d2 = document.getElementById("fluxRSSInfos");
 let d3 = document.getElementById("radio");
 let d4 = document.getElementById("trefle");
 let d5 = document.getElementById("quoteOfTheDay");
 let d6 = document.getElementById("factOfTheDay");
+let d7 = document.getElementById("numberOfTheDay");
+let d8 = document.getElementById("blocNote");
 
 togg1.addEventListener("click", () => {
   if(getComputedStyle(d1).display != "none"){
@@ -180,7 +184,14 @@ function toggg(){
   }
 };
 togg7.onclick = toggg;
-
+function toggh(){
+  if(getComputedStyle(d8).display != "none"){
+    d8.style.display = "none";
+  } else {
+    d8.style.display = "block";
+  }
+};
+togg8.onclick = toggh;
 
 const refreshButton = document.querySelector('.refresh-button');
 const refreshPage = () => {
@@ -362,3 +373,61 @@ function replaceImages(){
 
 document.getElementById("myButton").addEventListener("click", replaceImages);
 */
+
+
+let myWindowId;
+const contentBox = document.querySelector("#content");
+
+/*
+Make the content box editable as soon as the user mouses over the sidebar.
+*/
+window.addEventListener("mouseover", () => {
+  contentBox.setAttribute("contenteditable", true);
+});
+
+/*
+When the user mouses out, save the current contents of the box.
+*/
+window.addEventListener("mouseout", () => {
+  contentBox.setAttribute("contenteditable", false);
+  browser.tabs.query({windowId: myWindowId, active: true}).then((tabs) => {
+    let contentToStore = {};
+    contentToStore[tabs[0].url] = contentBox.textContent;
+    browser.storage.local.set(contentToStore);
+  });
+});
+
+/*
+Update the sidebar's content.
+1) Get the active tab in this sidebar's window.
+2) Get its stored content.
+3) Put it in the content box.
+*/
+function updateContent() {
+  browser.tabs.query({windowId: myWindowId, active: true})
+    .then((tabs) => {
+      return browser.storage.local.get(tabs[0].url);
+    })
+    .then((storedInfo) => {
+      contentBox.textContent = storedInfo[Object.keys(storedInfo)[0]];
+    });
+}
+
+/*
+Update content when a new tab becomes active.
+*/
+browser.tabs.onActivated.addListener(updateContent);
+
+/*
+Update content when a new page is loaded into a tab.
+*/
+browser.tabs.onUpdated.addListener(updateContent);
+
+/*
+When the sidebar loads, get the ID of its window,
+and update its content.
+*/
+browser.windows.getCurrent({populate: true}).then((windowInfo) => {
+  myWindowId = windowInfo.id;
+  updateContent();
+});

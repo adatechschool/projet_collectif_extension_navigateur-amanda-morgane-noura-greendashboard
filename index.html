@@ -21,79 +21,31 @@
 
         <div class="colonnes">
 
-            <!--Flux RSS actu environnement-->
-            <div class="bloc" id="fluxRSSInfos">
+            <!--Bloc note-->
+            <div class="bloc" id="blocNote">
                 <div class="card">
                     <div class="front">
                         <div class="titre">
                             <div class="pictoTitre">
-                                <img class="picto" src="/images/pictos/article.png"/>
-                                <h2>Un article</h2>
+                                <img class="picto" src="/images/pictos/notes.png"/>
+                                <h2>Bloc note</h2>
                             </div>
                             <div class="buttonTitre">
-                                <button id="togg2"> &#10060;</button>
+                                <button id="togg8"> &#10060;</button>
                             </div>
                         </div>
-                        <iframe src="https://feed.mikle.com/widget/v2/159055/?preloader-text=Loading"
-                            height="284px" width="400px" class="fw-iframe" scrolling="no" frameborder="0">
-                        </iframe>                    
+                        <div id = "content">
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <!--Chiffre-->
-            <div class="cardBox" id="numberOfTheDay">
-                <div class="card">
-                    <div class="front">
-                        <div class="titre">
-                            <div class="pictoTitre">
-                                <img class="picto" src="/images/pictos/chiffre.png"/>
-                                <h2>Un chiffre</h2>
-                            </div>
-                            <div class="buttonTitre">
-                                <button> &#10060;</button>
-                            </div>
-                        </div>
-                        <div class="container">
-                            <p id="chiffreDuJour"></p>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <button id="togg7" class="buttonNewInfo"> &#10060;</button>
-                        <button id="buttonNumber"> J'en veux un autre !</button>
-                    </div>
-                </div>
-            </div> 
-            
-            <!--Citation-->
-            <div class="cardBox" id="quoteOfTheDay">
-                <div class="card">
-                    <div class="front">
-                        <div class="titre">
-                            <div class="pictoTitre">
-                                <img class="picto" src="/images/pictos/citation.png"/>
-                                <h2>Une citation</h2>
-                            </div>
-                            <div class="buttonTitre">
-                                <button> &#10060;</button>
-                            </div>
-                        </div>
-                        <div id="containerQuote">
-                            <p id="quote"></p>
-                            <p id="author"></p>
-                        </div>
-                    </div>
-                    <div class="back">
-                        <button id="togg5" class="buttonNewInfo"> &#10060;</button>
-                        <button id="buttonQuote"> J'en veux une autre !</button>
-                    </div>
-                </div>
-            </div> 
-
-        </div>
-
-
-        <div class="colonnes">
 
             <!--Fact-->
             <div class="cardBox" id="factOfTheDay">
@@ -115,6 +67,55 @@
                     <div class="back">
                         <button id="togg6" class="buttonNewInfo"> &#10060;</button>
                         <button id="buttonFact"> J'en veux un autre !</button>
+                    </div>
+                </div>
+            </div> 
+
+            <!--Flux RSS actu environnement-->
+            <div class="bloc" id="fluxRSSInfos">
+                <div class="card">
+                    <div class="front">
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/article.png"/>
+                                <h2>Un article</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button id="togg2"> &#10060;</button>
+                            </div>
+                        </div>
+                        <iframe src="https://feed.mikle.com/widget/v2/159055/?preloader-text=Loading"
+                            height="284px" width="400px" class="fw-iframe" scrolling="no" frameborder="0">
+                        </iframe>                    
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="colonnes">
+
+            <!--Chiffre-->
+            <div class="cardBox" id="numberOfTheDay">
+                <div class="card">
+                    <div class="front">
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/chiffre.png"/>
+                                <h2>Un chiffre</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
+                        <div class="container">
+                            <p id="chiffreDuJour"></p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <button id="togg7" class="buttonNewInfo"> &#10060;</button>
+                        <button id="buttonNumber"> J'en veux un autre !</button>
                     </div>
                 </div>
             </div> 
@@ -219,6 +220,36 @@
                     -->
                 </div>
             </div>
+
+            <!--Citation-->
+            <div class="cardBox" id="quoteOfTheDay">
+                <div class="card">
+                    <div class="front">
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/citation.png"/>
+                                <h2>Une citation</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
+                        <div id="containerQuote">
+                            <p id="quote"></p>
+                            <p id="author"></p>
+                        </div>
+                    </div>
+                    <div class="back">
+                        <button id="togg5" class="buttonNewInfo"> &#10060;</button>
+                        <button id="buttonQuote"> J'en veux une autre !</button>
+                    </div>
+                </div>
+            </div> 
+
+        </div>
+            
+
+            
 
         </div>    
 

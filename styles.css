@@ -134,6 +134,10 @@ iframe{
     height: 200px;
 }
 
+#blocNote{
+    height: 300px;
+}
+
 .pictoPlayer{
     display: flex;
     flex-flow: row wrap;
@@ -254,13 +258,13 @@ button:active{
 /*RETOURNER LES BLOCS*/
 
 .bloc{
-    margin: 15px;
+    margin: 10px;
     width: 420px;
     height: 400px;
 }
 
 .cardBox {
-    margin: 15px;
+    margin: 10px;
     width: 420px;
     height: 400px;
     
@@ -347,4 +351,32 @@ button:active{
     to {
       transform: rotateY( 0deg);
     }
+  }
+
+
+
+
+
+  #content {
+    margin: 0;
+    padding: 0 10px 10px 10px;
+    height: 80%;
+    text-align: left;
+    font-size: 18px;
+    transition: background-color .2s ease-out;
+    border-radius: 0  0 22px 22px;
+  }
+
+li{
+    list-style: url('/images/pictos/puce.png');
+    padding: 0 0 10px 0;
+  }
+  
+  #content[contenteditable=true] {
+    background-color: white;
+    transition: background-color .2s ease-in;
+  }
+  
+  [contenteditable]:focus {
+    outline: 0px solid transparent;
   }

@@ -12,6 +12,14 @@ function replaceImages(){
         img.src = urlImage;
         img.className = "imageForet";
     }
+    document.querySelector("h1").style.color = "#104c2a"
+    document.querySelector("h2").style.color = "#017d39"
+    document.querySelector("span").style.color = "#017d39"
+    document.querySelector("h3").style.color = "##009430"
+    document.querySelector("p").style.color = "#3e6b38"
+    document.querySelector("a").style.color = "#3e6b38"
+    document.querySelector("strong").style.color = "#3e6b38"
+    document.body.style.backgroundColor = "#dfefe4"
 }
 
 
