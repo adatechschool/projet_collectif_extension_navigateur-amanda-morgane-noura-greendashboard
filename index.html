@@ -25,8 +25,15 @@
             <div class="bloc" id="fluxRSSInfos">
                 <div class="card">
                     <div class="front">
-                        <button id="togg2"> &#10060;</button>
-                        <h2>Un article</h2>
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/article.png"/>
+                                <h2>Un article</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button id="togg2"> &#10060;</button>
+                            </div>
+                        </div>
                         <iframe src="https://feed.mikle.com/widget/v2/159055/?preloader-text=Loading"
                             height="284px" width="400px" class="fw-iframe" scrolling="no" frameborder="0">
                         </iframe>                    
@@ -38,8 +45,15 @@
             <div class="cardBox" id="quoteOfTheDay">
                 <div class="card">
                     <div class="front">
-                        <button> &#10060;</button>
-                        <h2>Une citation</h2>
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/citation.png"/>
+                                <h2>Une citation</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
                         <p id="quote"></p>
                         <p id="author"></p>
                     </div>
@@ -59,8 +73,15 @@
             <div class="cardBox" id="factOfTheDay">
                 <div class="card">
                     <div class="front">
-                        <button> &#10060;</button>
-                        <h2>Un fait</h2>
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/fait.png"/>
+                                <h2>Un fait</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
                         <p id="fact"></p>
                     </div>
                     <div class="back">
@@ -74,8 +95,15 @@
             <div class="cardBox" id="trefle">
                 <div class="card">
                     <div class="front">
-                        <button> &#10060;</button>
-                        <h2>Une plante</h2>
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/plante.png"/>
+                                <h2>Une plante</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
                         <h3 id="name"></h3>
                         <p id="scientific_name"></p>
                         <div id="img">
@@ -98,8 +126,15 @@
             <div class="bloc" id="fluxRSSPodcast">
                 <div class="card">
                     <div class="front">
-                        <button id="togg1"> &#10060;</button>
-                        <h2>Un podcast</h2>
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/podcast.png"/>
+                                <h2>Un podcast</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button id="togg1"> &#10060;</button>
+                            </div>
+                        </div>
                         <iframe src="https://feed.mikle.com/widget/v2/159054/?preloader-text=Loading"
                             height="369px" width="400px" class="fw-iframe" scrolling="no" frameborder="0">
                         </iframe>
@@ -108,15 +143,50 @@
             </div>
 
             <!--Radio France Culture-->
-            <div class="bloc" id="radio">
+            <div class="cardBox" id="radio">
                 <div class="card">
                     <div class="front">
-                        <button id="togg3"> &#10060;</button>
-                        <h2>Une radio</h2>
-                        <iframe id="allzicradio" src="https://www.allzicradio.com/en/player/embed/89/france-culture?width=200&primary=EBEBEB&autoplay=0&color=0&playlist=1" frameborder="0"
+                        <div class="titre">
+                            <div class="pictoTitre">
+                                <img class="picto" src="/images/pictos/radio.png"/>
+                                <h2>Une radio</h2>
+                            </div>
+                            <div class="buttonTitre">
+                                <button> &#10060;</button>
+                            </div>
+                        </div>
+                        <div class="pictoPlayer" id="pictoPlayer1">
+                            <img id="pictoRadio" src="/images/radios/france_inter.png"/>
+                            <audio
+                            controls
+                            src="http://direct.franceinter.fr/live/franceinter-lofi.mp3?ID=33c5hej2c2">
+                            </audio>
+                        </div>
+                        <div class="pictoPlayer">
+                            <img id="pictoRadio" src="/images/radios/france_culture.png"/>
+                            <audio
+                                controls
+                                src="https://icecast.radiofrance.fr/franceculture-midfi.mp3?ID=33c5hej2c2">
+                            </audio>
+                        </div>
+                        <div class="pictoPlayer">
+                            <img id="pictoRadio" src="/images/radios/oui_fm.png"/>
+                            <audio
+                                controls
+                                src="https://ouifm.ice.infomaniak.ch/ouifm-high.mp3">
+                            </audio>
+                        </div>
+                        <!--
+                            <iframe id="allzicradio" src="https://www.allzicradio.com/en/player/embed/89/france-culture?width=200&primary=EBEBEB&autoplay=0&color=0&playlist=1" frameborder="0"
                             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                             width="200" height="350" scrolling="no">
                         </iframe>
+                        -->                        
+                    </div>
+                    <div class="back">
+                        <button id="togg3" class="buttonNewInfo"> &#10060;</button>
+                        <a target="_blank" href="https://www.radiofrance.fr/" id="buttonRadio">Je veux en écouter une autre !</a>  
+                        <!-- Le lien ne fonctionne pas -->
                     </div>
                 </div>
             </div>

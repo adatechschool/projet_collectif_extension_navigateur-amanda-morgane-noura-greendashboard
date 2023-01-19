@@ -55,7 +55,7 @@ function fetchPlant() {
       const name = document.querySelector("#name");
       name.innerHTML = data.data[0].common_name;
       const scientific_name = document.querySelector("#scientific_name");
-      scientific_name.innerHTML = data.data[0].scientific_name;
+      scientific_name.innerHTML = `Scientific name : ${data.data[0].scientific_name}`;
       //const image = document.querySelector("#image");
       //image.src = data.data[0].image_url;
       const image = document.querySelector("#img");
